@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+/* src/App.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap'); /* For font-inter if not loaded */
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Custom: Gradient border on metric cards */
+.bg-white.shadow-lg {
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, #667eea 0%, #764ba2 100%) border-box;
+  transition: all 0.3s ease;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.bg-white.shadow-lg:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.2) !important;
+}
+
+/* Custom: Darker modal backdrop for drama */
+.bg-gray-900.bg-opacity-70 {
+  background: rgba(17, 24, 39, 0.85) !important;
+}
+
+/* Custom: Animate the upload spinner */
+.animate-spin {
+  animation-duration: 1.5s !important;
+}
+
+/* Custom: Responsive table stripes */
+tbody tr:nth-child(even) {
+  background-color: #f9fafb;
+}
+
+tbody tr:hover {
+  background-color: #e0e7ff;
+}
+
+@media (min-width: 768px) {
+  .grid-cols-3 > div:not(:last-child) {
+    border-right: 1px solid #e5e7eb;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+.processing-text::after {
+  content: '';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+.processing-text::after {
+  content: '';
+  animation: dots 1.5s steps(4, end) infinite;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
 }
